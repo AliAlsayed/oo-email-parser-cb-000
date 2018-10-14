@@ -8,8 +8,7 @@ class EmailParser
     @emails = emails
   end
   def parse
-    parsed_emails = []
-    @emails.include?(",") ? parsed_emails = @emails.split(",") : parsed_emails = @emails.split(" ")
+    parsed_emails = @emails.split(/[\s,]/)
     parsed_emails.uniq
   end
 end
